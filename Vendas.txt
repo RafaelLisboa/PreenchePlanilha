@@ -1,0 +1,12 @@
+1	Banana      32
+5	Mexirica    27
+12	Amendoim    60
+3	Melancia    12
+4	Uva         63
+6	Cereja      52
+8	Melao       18
+2	Maca        46
+9	Abacate     31
+7	Mamao       28
+11	Cacau       12
+10	Acai        27
