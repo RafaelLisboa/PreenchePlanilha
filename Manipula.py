@@ -5,14 +5,9 @@ def abreArq(arq):
     try: 
         file = open(arq, 'r')
     except (FileExistsError, FileNotFoundError):
-        print ('Arquivo de texto não encontrado'.upper())
-        sleep(2)
         return False
     else:
         file.close()
-        print('Arquivo encontrado com sucesso'.upper())
-        print('-'*40)
-        sleep(2)
         return True
 
 #Separa cada linha do arquivo de texto, colocando elas em uma lista e removendo espaços e o "\n"
