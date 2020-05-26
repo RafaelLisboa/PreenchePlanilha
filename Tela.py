@@ -1,25 +1,40 @@
 from tkinter import *
-from Excel import *
+from Excel import Planilha
 import Manipula as m
 from tkinter import ttk
 
+# Iniciando variaveis globais
+planilha = None
 arquivo = None
 verifica = None
+
+
+def preencherTudo(texto, planilha):
+    global verifica
+    dados = open(texto)
+    vendas = m.itensVendas(dados)
+    planilha = Planilha(vendas, planilha)
+    planilha.preencher()
+    informa['text'] = 'Planilha Preenchida com sucesso'
 
 
 def b_click():
     global arquivo, verifica, informa
     texto = entradtela.get()
-    if texto == '':
+    plan = entradtela2.get()
+    if texto == '' or plan == '':
         informa["text"] = 'Por favor preencha os campos'
     else:
         arquivo = texto
         # Esta Função "Pergunta" a função se o arquivo esta acessivel
         verifica = m.abreArq(arquivo)
         if (verifica == True):
-            informa["text"] = 'Arquivo de texto encontrado'
+            informa["text"] = 'Arquivos encontrados'
+            preencherTudo(texto, plan)
+
+
         else:
-            informa["text"] = 'Arquivo de texto não encontrado'
+            informa["text"] = 'Um dos arquivos não foi encontrado'
 
 
 # Cria a janela
@@ -56,14 +71,6 @@ b_ok.place(x=40, y=230)
 imagem = PhotoImage(file="Imagens/imagem.png")
 logoimage = Label(janela, image=imagem, bg='green')
 logoimage.place(x=350, y=80)
-
-# Caso consiga ele começa a tratar os dados do arquivo .txt e o da planilha
-# if verifica == True:
-# Abre o arquivo de texto e cria uma instancia da classe Planilha
-# dados = open (arquivo)
-# vendas = m.itensVendas(dados)
-# planilha = Planilha(vendas)
-# planilha.preencher()
 
 
 janela.mainloop()

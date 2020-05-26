@@ -14,12 +14,13 @@ def buscaCol():
 #Classe Planilha com metodo contrutor com atributos relacionados a planilha
 class Planilha:
 
-    def __init__(self, lista):
+    def __init__(self, lista, nomeplan):
         self.lista = lista
+        self.nomedaplan = nomeplan
         try:
-            self.wb = load_workbook('Vendas.xlsx')
+            self.wb = load_workbook(self.nomedaplan)
         except:
-            print('Planilha não encontrada'.upper())
+            pass
         else:
             self.coluna = buscaCol()
             self.linha = 2
