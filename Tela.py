@@ -9,6 +9,7 @@ arquivo = None
 verifica = None
 
 
+# Funçao Chamada para preencher a planilha
 def preencherTudo(texto, planilha):
     global verifica
     dados = open(texto)
@@ -18,6 +19,7 @@ def preencherTudo(texto, planilha):
     informa['text'] = 'Planilha Preenchida com sucesso'
 
 
+#Função do Botão para coletar os textos digitados
 def b_click():
     global arquivo, verifica, informa
     texto = entradtela.get()
