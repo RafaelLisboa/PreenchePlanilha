@@ -11,7 +11,7 @@ def buscaCol():
 
     return dias[dia]
 
-#Classe Planilha com metodo contrutor com atributos relacionados a planilha
+#Classe Planilha com metodo contrutor com atributos relacionados a planilha, como seu nome por exemplo
 class Planilha:
 
     def __init__(self, lista, nomeplan):
