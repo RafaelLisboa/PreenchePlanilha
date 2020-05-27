@@ -1,5 +1,6 @@
 1	Banana      32
 5	Mexirica    27
+8	Melão	    23
 12	Amendoim    60
 3	Melancia    12
 4	Uva         63
