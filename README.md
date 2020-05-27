@@ -16,10 +16,10 @@ Reconhecer a coluna a ser preenchida com base no dia em que o script esta sendo 
 
 Inicialmente estou disponibilizando uma planilha modelo, além do arquivo txt.
 
-O arquivo Excpy.py é quem cria a interface grafica da aplicação e coleta dados como o nome da Planilha e do Arquivo de texto para envia-los aos módulos
+-O arquivo Excpy.py é quem cria a interface grafica da aplicação e coleta dados como o nome da Planilha e do Arquivo de texto para envia-los aos módulos
 
-O arquivo Excel.py é quem preenche a planilha com dados do arquivos txt que foram tratados pelo modulo Manipula
+-O arquivo Excel.py é quem preenche a planilha com dados do arquivos txt que foram tratados pelo modulo Manipula
 
-O arquivo Manipula.py é quem trata os dados do arquivos txt e armazena eles em uma lista e entrega a mesma para o arquivo Excpy, que depois é enviado para o Excel.py que preenche a planilha.
+-O arquivo Manipula.py é quem trata os dados do arquivos txt e armazena eles em uma lista e entrega a mesma para o arquivo Excpy, que depois é enviado para o Excel.py que preenche a planilha.
 
-O Excpy.exe é o executavel da aplicação, inicialmente somente para o Windows
+-O Excpy.exe é o executavel da aplicação, inicialmente somente para o Windows
