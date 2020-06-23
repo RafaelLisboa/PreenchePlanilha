@@ -1,4 +1,4 @@
-![Alt Text](https://github.com/RafaelLisboa/PreenchePlanilha/raw/master/path/to/Capturar.jpg)
+![Imagem](https://github.com/RafaelLisboa/PreenchePlanilha/blob/master/Imagens/Capturar.JPG)
 
 
 
