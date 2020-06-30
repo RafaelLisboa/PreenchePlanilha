@@ -2,11 +2,30 @@ from tkinter import *
 from Excel import Planilha
 import Manipula as m
 from tkinter import ttk
+from tkinter import filedialog
 
 # Iniciando variaveis globais
+planilha_buscada = None
 planilha = None
 arquivo = None
+texto_buscado = None
 verifica = None
+
+
+def searchTxt():
+    global texto_buscado
+    texto_buscado = filedialog.askopenfilename(initialdir="Desktop", title="Selecione o Arquivo de texto",
+                                               filetypes=(("Texto", "*.txt"), ("Todos os Arquivos", "*.*")))
+    entradtela['text'] = "Arquivo encontrado"
+    search_txt['state'] = DISABLED
+
+
+def searchPlan():
+    global planilha_buscada
+    planilha_buscada = filedialog.askopenfilename(initialdir="Desktop", title="Selecione o Arquivo de texto",
+                                                  filetypes=(("Planilha", "*.xlsx"), ("Todos os Arquivos", "*.*")))
+    entradtela2['text'] = "Arquivo encontrado"
+    search_plan['state'] = DISABLED
 
 
 # Funçao Chamada para preencher a planilha
@@ -21,9 +40,9 @@ def preencherTudo(texto, planilha):
 
 #Função do Botão para coletar os textos digitados
 def b_click():
-    global arquivo, verifica, informa
-    texto = entradtela.get()
-    plan = entradtela2.get()
+    global arquivo, verifica, informa, planilha_buscada, texto_buscado
+    plan = planilha_buscada
+    texto = texto_buscado
     if texto == '' or plan == '':
         informa["text"] = 'Por favor preencha os campos'
     else:
@@ -50,15 +69,15 @@ direito['bg'] = 'green'
 direito.pack(side=RIGHT)
 
 # Widgets
-entradtela = ttk.Entry(janela, width=30)
-entradtela.place(x=40, y=52)
-entradtela2 = ttk.Entry(janela, width=30)
-entradtela2.place(x=40, y=130)
+entradtela = Label(janela, text=" ", fg='black', font='Arial 10 bold')
+entradtela.place(x=155, y=52)
+entradtela2 = Label(janela, text=" ", fg='black', font='Arial 10 bold')
+entradtela2.place(x=155, y=130)
 
 # Labels
-saidatela = Label(janela, text="Nome do arquivo txt", fg='black', font='Arial 10 bold')
+saidatela = Label(janela, text="Arquivo de texto", fg='black', font='Arial 10 bold')
 saidatela.place(x=36, y=25)
-saidatela2 = Label(janela, text="Nome da Planilha", fg='black', font='Arial 10 bold')
+saidatela2 = Label(janela, text="Planilha", fg='black', font='Arial 10 bold')
 saidatela2.place(x=36, y=100)
 informa = Label(janela, text=" ", fg='black', font='Arial 10 bold')
 informa.place(x=50, y=280)
@@ -66,11 +85,13 @@ informa.place(x=50, y=280)
 # Botão
 b_ok = Button(janela, text="OK", width=30, command=b_click)
 b_ok.place(x=40, y=230)
-
+search_txt = Button(janela, text="Buscar Arquivo", width=15, command=searchTxt)
+search_txt.place(x=40, y=52)
+search_plan = Button(janela, text="Buscar Arquivo", width=15, command=searchPlan)
+search_plan.place(x=40, y=130)
 # Imagem
 imagem = PhotoImage(file="Imagens/imagem.png")
 logoimage = Label(janela, image=imagem, bg='green')
 logoimage.place(x=350, y=80)
-
 
 janela.mainloop()
