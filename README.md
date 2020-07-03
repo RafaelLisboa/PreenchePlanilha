@@ -7,7 +7,7 @@
 # PreenchePlanilha
 O projeto visa abrir um arquivo txt, ler os dados de venda e preencher uma planilha já previamente tratada com celulas definidas no proprio script.
 
-## O arquivo executavel precisa estar na mesma pasta da planilha e do arquivo txt e precisa estar acompanhado da pasta Imagens. 
+## O arquivo executavel precisa estar acompanhado da pasta Imagens. 
 
 A linguagem escolhida foi Python pela maior familiaridade com comandos e paradigmas da mesma.
 
