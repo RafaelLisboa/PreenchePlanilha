@@ -16,16 +16,22 @@ def searchTxt():
     global texto_buscado
     texto_buscado = filedialog.askopenfilename(initialdir="Desktop", title="Selecione o Arquivo de texto",
                                                filetypes=(("Texto", "*.txt"), ("Todos os Arquivos", "*.*")))
-    entradtela['text'] = "Arquivo encontrado"
-    search_txt['state'] = DISABLED
+    if texto_buscado != "" or None:
+        entradtela['text'] = "Arquivo encontrado"
+        search_txt['state'] = DISABLED
+    else:
+        pass
 
 
 def searchPlan():
     global planilha_buscada
     planilha_buscada = filedialog.askopenfilename(initialdir="Desktop", title="Selecione o Arquivo de texto",
                                                   filetypes=(("Planilha", "*.xlsx"), ("Todos os Arquivos", "*.*")))
-    entradtela2['text'] = "Arquivo encontrado"
-    search_plan['state'] = DISABLED
+    if planilha_buscada != "" or None:
+        entradtela2['text'] = "Arquivo encontrado"
+        search_plan['state'] = DISABLED
+    else:
+        pass
 
 
 # Funçao Chamada para preencher a planilha
